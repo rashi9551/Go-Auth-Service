@@ -14,7 +14,7 @@ export class Authcontroller {
             callback(null,{userId : decoded.id, role: decoded.role})
         }catch(e: any){
             callback(e, null)
-        }
+         }
     }
 
     verifyToken = async(call:any, callback:any) => {
