@@ -22,7 +22,7 @@ export class Authcontroller {
             console.log(call.request);
             const refreshtoken = call.request.token as string;
             const decoded: any = jwt.verify(refreshtoken, process.env.REFRESH_TOKEN ||"Rashid" as Secret);
-            console.log("token refreshed");
+            console.log("token refreshed ");
             if(!decoded){
                 throw new Error("invalid token ")
             }
