@@ -5,7 +5,7 @@ export class Authcontroller {
 
     isAuthenticated = async (call:any, callback:any) => {
         try{
-            console.log("token validating ");
+            console.log("token validating  ");
             const token = call.request.token || '';            
             const decoded: any = jwt.verify(token, process.env.ACCESS_TOKEN || "Rashid" as Secret)
             if(!decoded){
