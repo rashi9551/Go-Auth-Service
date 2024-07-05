@@ -13,7 +13,7 @@ export class Authcontroller {
             }
             callback(null,{userId : decoded.id, role: decoded.role})
         }catch(e: any){
-            callback(e, null)
+            callback(e, {message:"something gone wrong in authentication"})
          }
     }
 
@@ -35,7 +35,7 @@ export class Authcontroller {
             callback(null, response)
         }catch(e:any){
             console.log(e);  
-            callback(e, null)
+            callback(e, {message:"something gone wrong in authentication"})
         }
     }
 }
