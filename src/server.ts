@@ -16,7 +16,7 @@ const controller = new Authcontroller()
 const server = new grpc.Server()
 
 const grpcServer = () => {
-    const port = process.env.PORT || '3001';
+    const port = process.env.AUTH_PORT || '3001';
     server.bindAsync(`localhost:${port}`,
         grpc.ServerCredentials.createInsecure(),
         (err, boundPort) => {
