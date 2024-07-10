@@ -17,7 +17,9 @@ const server = new grpc.Server()
 
 const grpcServer = () => {
     const port = process.env.AUTH_PORT || '3001';
-    server.bindAsync(`localhost:${port}`,
+    const Domain=process.env.NODE_ENV==='dev'?process.env.DEV_DOMAIN:process.env.PRO_DOMAIN_AUTH
+    console.log(Domain)
+    server.bindAsync(`${Domain}:${port}`,
         grpc.ServerCredentials.createInsecure(),
         (err, boundPort) => {
             if (err) {
