@@ -35,7 +35,7 @@ export class Authcontroller {
             callback(null, response)
         }catch(e:any){
             console.log(e);  
-            callback(e, {message:"something gone wrong in authentication"})
+            callback(e, {message:"something gone wrong in authentication "})
         }
     }
 }
