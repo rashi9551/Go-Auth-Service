@@ -21,10 +21,10 @@ export class Authcontroller {
         try{
             const refreshtoken = call.request.token as string;
             const decoded: any = jwt.verify(refreshtoken, process.env.REFRESH_TOKEN ||"Rashid" as Secret);
-            console.log("token refreshed ");
             if(!decoded){
-                throw new Error("invalid token  ")
+                throw new Error("refresh invalid token  ")
             }
+            console.log("token refreshed ");
             const refreshToken = jwt.sign({id: decoded.id, role: decoded.role}, process.env.REFRESH_TOKEN ||"Rashid" as Secret, {
                 expiresIn: "7d"
             })
